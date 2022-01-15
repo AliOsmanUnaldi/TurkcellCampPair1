@@ -2,7 +2,7 @@ public class Main {
     public static void main(String[] args) {
 
         int counter = 0;
-        int a = 0;
+        int a = 2;
 
         while (counter < 2) {
             //Checking if two numbers are friendly numbers
