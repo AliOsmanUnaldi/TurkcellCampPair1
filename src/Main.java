@@ -1,41 +1,39 @@
 public class Main {
     public static void main(String[] args) {
-        int cntr = 0;
-        int a = 200;
 
-        while (cntr < 2) {
-            //System.out.println(a+"***");
+        int counter = 0;
+        int a = 0;
+
+        while (counter < 2) {
+            //Checking if two numbers are friendly numbers
             for (int i = a - 1; i > 1; i--) {
-                if (asal(a) == i && asal(i)==a) {
+                if (sumOfDividers(a) == i && sumOfDividers(i)==a) {
                     System.out.println("-----------------------------");
-                    System.out.println("Bölenleri Toplamı:(X: " + asal(a) + " Y: " + asal(i) + ")");
+                    System.out.println("Bölenleri Toplamı:(X: " + sumOfDividers(a) + " Y: " + sumOfDividers(i) + ")");
                     System.out.println("X Sayısı:  " + a + " Y Sayısı: " + i);
                     System.out.println("-----------------------------");
-                    cntr++;
-                    System.out.println(cntr);
+                    counter++;
+                    System.out.println(counter);
                 }
-                if(cntr==2)
+                //Ending loop
+                if(counter==2)
                 {
                     break;
                 }
             }
             a++;
         }
-
-
-        //System.out.println("2620:"+asal(2620)+" 2924:"+asal(2924));
     }
 
-
-
-    public static int asal(int a) {
-        int top = 0;
+    //Finding sum of dividers
+    public static int sumOfDividers(int a) {
+        int sum = 0;
         for (int i = a - 1; i > 0; i--) {
             if (a % i == 0) {
-                top += i;
+                sum += i;
             }
         }
-        return top;
+        return sum;
     }
 
 }
